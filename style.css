@@ -10,7 +10,7 @@
 /* Map and implementation outcomes share the primary workspace. */
 .intro{padding:22px 0 12px}.intro h1{font-size:30px}.intro p{margin-bottom:8px}.status{margin-bottom:14px}
 .siting-grid{grid-template-columns:minmax(0,1.65fr) minmax(320px,1fr);align-items:start}
-.siting-grid>.map-panel{grid-column:1;grid-row:1;position:sticky;top:108px}
+.siting-grid>.map-panel{grid-column:1;grid-row:1;position:static;top:auto;min-width:0;align-self:start}
 .impact-panel{grid-column:2;grid-row:1;min-width:0;border-top:4px solid var(--green)}
 .impact-tabs{display:flex;gap:6px}.impact-tabs button{flex:1;padding:8px 4px;font-size:13px}.impact-tabs button[aria-pressed=true]{background:var(--green);color:white;border-color:var(--green)}
 .impact-location{margin:15px 0 10px;font-weight:600}.impact-gain{padding:18px;background:#e7f2e9;border-radius:12px}.impact-gain>span{display:block;font-size:12px;color:#536b5b}.impact-gain strong{display:block;font-size:36px;color:#206b52;line-height:1.5}.impact-gain strong small{font-size:14px}
@@ -21,3 +21,6 @@
 @media(max-width:900px){.siting-grid{grid-template-columns:1fr}.siting-grid>.map-panel{position:static;grid-column:1;grid-row:1}.impact-panel{grid-column:1;grid-row:2}.siting-grid>.site-settings{grid-column:1;grid-row:3;grid-template-columns:1fr 1fr}.impact-gain strong{font-size:30px}}
 @media(max-width:540px){.siting-grid>.site-settings{display:block}.intro h1{font-size:26px}.impact-metric strong{font-size:18px}}
 @media print{.siting-grid>.map-panel{position:static}.impact-panel{break-inside:avoid}.impact-tabs,.impact-links{display:none}.siting-grid>.site-settings{display:block}.intro{display:none}}
+
+/* Keep tall maps in document flow so they cannot cover subsequent controls. */
+.siting-grid{isolation:isolate}.siting-grid>.site-settings{position:relative;min-width:0}.siting-grid input,.siting-grid select{min-width:0;max-width:100%}
