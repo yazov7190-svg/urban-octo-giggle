@@ -24,3 +24,5 @@
 
 /* Keep tall maps in document flow so they cannot cover subsequent controls. */
 .siting-grid{isolation:isolate}.siting-grid>.site-settings{position:relative;min-width:0}.siting-grid input,.siting-grid select{min-width:0;max-width:100%}
+
+.quick-adjust{margin:16px 0;padding:14px;background:#f4f7f2;border:1px solid var(--line);border-radius:10px}.quick-adjust h3{margin:0 0 8px}.quick-adjust label{margin:6px 0;font-size:12px}.quick-adjust details{margin-top:10px}.quick-adjust input,.quick-adjust select{padding:7px}.quick-adjust .hint{margin-bottom:0}@media print{.quick-adjust{display:none}}
